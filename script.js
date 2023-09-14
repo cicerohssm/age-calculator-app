@@ -11,17 +11,17 @@ function renderizar(year, month, day){
     const resultadoDias = document.getElementById("spandays");
     if(invalidYear(year)){
         year = "- -";
-    }
+    } 
     if(invalidMonth(month)){
         month = "- -";
-    }
+    } 
     if(invalidDay(day, month, year)){
         day = "- -";
+    } else{
+        resultadoAno.innerHTML = comparation(month, day, year)[0];
+        resultadoMeses.innerHTML = comparation(month, day, year)[1];
+        resultadoDias.innerHTML = comparation(month, day, year)[2];
     }
-    resultadoAno.innerHTML = comparation(month, day, year)[0];
-    resultadoMeses.innerHTML = comparation(month, day, year)[1];
-    resultadoDias.innerHTML = comparation(month, day, year)[2];
-    
 }
 function comparation(month, day, year){
     const today = new Date();
@@ -75,17 +75,17 @@ function invalidMonth(month){
 
 
 function invalidDay(day, month, year){
+    if(day <= 29 && month == 2 && bisexto(year)){
+        const inputMessage = document.getElementById("messageDay");
+        inputMessage.innerHTML = "";
+        return false
+    }
+    if(day == 29 && month == 2 && !bisexto(year)){
+        const inputMessage = document.getElementById("messageYear");
+        inputMessage.innerHTML = "It's not a leap year";
+        return true
+    }
     if(day == 0 || day > 31 || day == null){
-        if(day == 29 && month == 2 && bisexto(year)){
-            const inputMessage = document.getElementById("messageDay");
-            inputMessage.innerHTML = "";
-            return false
-        }
-        if(day >= 29 && month == 2){
-            const inputMessage = document.getElementById("messageDay");
-            inputMessage.innerHTML = "Must be a valid day";
-            return true
-        }
         const inputMessage = document.getElementById("messageDay");
         inputMessage.innerHTML = "Must be a valid day";
         return true
@@ -96,7 +96,8 @@ function invalidDay(day, month, year){
 }
 
 function bisexto(year){
-    if((year % 4) == 0){
+    var resto = year % 4
+    if(resto == 0){
         return true
     }
     return false
