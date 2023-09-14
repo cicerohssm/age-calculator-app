@@ -117,12 +117,15 @@ body{
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 960px) {
     .card{
-        width: 60%;
+        width: 80%;
         height: auto;
         border-radius: 25px 25px 150px;
         gap: 50px;
+    }
+    .place{
+        width: 30%;
     }
     .inputs{
         height: auto;
@@ -131,6 +134,7 @@ body{
     }
     .divisor{
         flex-wrap: wrap;
+        height: 1vh;
     }
     .icone{
         position: relative;
@@ -138,13 +142,13 @@ body{
     }
     .result{
         width: 100%;
-        height: auto;
         display: flex;
         flex-wrap: wrap;
         gap: 8px;
         justify-content: center;
         align-items: center;
         text-align: center;
+        padding-bottom: 50px;
     }
     .result p, span{
         width: 100%;
