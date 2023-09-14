@@ -36,16 +36,25 @@ function comparation(month, day, year){
             var comparationData = today.getDate() - dataNascimento.getDate();
         } else if(today.getMonth() >= dataNascimento.getMonth() && today.getDate() >= dataNascimento.getDate()){
             var comparationMonth = today.getMonth() - dataNascimento.getMonth();
-            var comparationData = today.getDate();
+            var comparationData = today.getDate() - dataNascimento.getDate();
         } else if(today.getMonth() >= dataNascimento.getMonth() && today.getDate() < dataNascimento.getDate()){
             var comparationMonth = today.getMonth() - dataNascimento.getMonth() - 1;
             var comparationData = 30 + (today.getDate() - dataNascimento.getDate());
         }
     }
-    if(today.getMonth() < dataNascimento.getMonth()){
-        comparationYear--;
-        var comparationMonth = dataNascimento.getMonth() - today.getMonth();
-        var comparationData = 30 + (dataNascimento.getDate() - today.getDate());
+    if(today.getMonth() <= dataNascimento.getMonth()){
+        if(today.getMonth() == dataNascimento.getMonth() && today.getDate() >= dataNascimento.getDate()){
+            var comparationMonth = 0;
+            var comparationData = today.getDate() - dataNascimento.getDate();
+        } else if(today.getMonth() <= dataNascimento.getMonth() && today.getDate() >= dataNascimento.getDate()){
+            comparationYear--;
+            var comparationMonth = 12 - (dataNascimento.getMonth() - today.getMonth());
+            var comparationData = dataNascimento.getDate() - today.getDate();
+        } else if(today.getMonth() <= dataNascimento.getMonth() && today.getDate() < dataNascimento.getDate()){
+            comparationYear--;
+            var comparationMonth = 12 - (dataNascimento.getMonth() - today.getMonth()) - 1;
+            var comparationData = 30 - (dataNascimento.getDate() - today.getDate());
+        }
     }
     console.log(comparationYear, comparationMonth, comparationData);
     return [comparationYear, comparationMonth, comparationData]
