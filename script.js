@@ -49,7 +49,7 @@ function comparation(month, day, year){
         } else if(today.getMonth() <= dataNascimento.getMonth() && today.getDate() >= dataNascimento.getDate()){
             comparationYear--;
             var comparationMonth = 12 - (dataNascimento.getMonth() - today.getMonth());
-            var comparationData = 30 - (today.getDate() - dataNascimento.getDate());
+            var comparationData = today.getDate() - dataNascimento.getDate();
         } else if(today.getMonth() <= dataNascimento.getMonth() && today.getDate() < dataNascimento.getDate()){
             comparationYear--;
             var comparationMonth = 12 - (dataNascimento.getMonth() - today.getMonth()) - 1;
