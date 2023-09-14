@@ -63,6 +63,7 @@ body{
 
 .place input{
     width: 100%;
+    min-width: 100px;
     line-height: 40px;
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
@@ -115,3 +116,41 @@ body{
 
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
+
+@media screen and (max-width: 900px) {
+    .card{
+        width: 60%;
+        height: auto;
+        border-radius: 25px 25px 150px;
+        gap: 50px;
+    }
+    .inputs{
+        height: auto;
+        justify-content: center;
+        align-items: center;
+    }
+    .divisor{
+        flex-wrap: wrap;
+    }
+    .icone{
+        position: relative;
+        top: -35px;
+    }
+    .result{
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .result p, span{
+        width: 100%;
+        font-family: 'Poppins', sans-serif;
+        font-size: 32px;
+        font-weight: 700;
+        font-style: italic;
+    }
+}

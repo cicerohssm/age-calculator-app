@@ -18,7 +18,9 @@ function renderizar(year, month, day){
     if(invalidDay(day, month, year)){
         day = "- -";
     }
-    resultadoAno.innerHTML = comparation(month, day, year);
+    resultadoAno.innerHTML = comparation(month, day, year)[0];
+    resultadoMeses.innerHTML = comparation(month, day, year)[1];
+    resultadoDias.innerHTML = comparation(month, day, year)[2];
     
 }
 function comparation(month, day, year){
@@ -41,7 +43,7 @@ function comparation(month, day, year){
         }
     }
     console.log(comparationYear, comparationMonth, comparationData);
-    return comparationYear
+    return [comparationYear, comparationMonth, comparationData]
 }
 
 function invalidYear(year){
