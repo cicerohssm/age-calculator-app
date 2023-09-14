@@ -96,10 +96,10 @@ Os usuários devem ser capazes de:
 
 ### Tecnologias
 
-- Semantic HTML5
-- CSS custom properties
+- HTML5
+- CSS3
 - Flexbox
-- Mobile-First Workflow
+- Mobile First Design
 
 ## Desenvolvedor
 
