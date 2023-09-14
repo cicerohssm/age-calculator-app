@@ -42,6 +42,11 @@ function comparation(month, day, year){
             var comparationData = 30 + (today.getDate() - dataNascimento.getDate());
         }
     }
+    if(today.getMonth() < dataNascimento.getMonth()){
+        comparationYear--;
+        var comparationMonth = dataNascimento.getMonth() - today.getMonth();
+        var comparationData = 30 + (dataNascimento.getDate() - today.getDate());
+    }
     console.log(comparationYear, comparationMonth, comparationData);
     return [comparationYear, comparationMonth, comparationData]
 }
