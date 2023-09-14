@@ -73,6 +73,12 @@ body{
     outline: 0;
 }
 
+#messageYear, #messageMonth, #messageDay{
+    color: var(--primary-color-light-red);
+    font-size: 10px;
+    font-weight: 400;
+}
+
 .divisor{
     display: flex;
     width: 100%;
