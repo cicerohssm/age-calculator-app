@@ -49,7 +49,7 @@ function comparation(month, day, year){
         } else if(today.getMonth() <= dataNascimento.getMonth() && today.getDate() >= dataNascimento.getDate()){
             comparationYear--;
             var comparationMonth = 12 - (dataNascimento.getMonth() - today.getMonth());
-            var comparationData = dataNascimento.getDate() - today.getDate();
+            var comparationData = 30 - (today.getDate() - dataNascimento.getDate());
         } else if(today.getMonth() <= dataNascimento.getMonth() && today.getDate() < dataNascimento.getDate()){
             comparationYear--;
             var comparationMonth = 12 - (dataNascimento.getMonth() - today.getMonth()) - 1;
@@ -81,7 +81,6 @@ function invalidMonth(month){
     inputMessage.innerHTML = "";
     return false
 }
-
 
 function invalidDay(day, month, year){
     if(day <= 29 && month == 2 && bisexto(year)){
