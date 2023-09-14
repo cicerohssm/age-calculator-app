@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+    <title>Age Calculator App</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="./script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <form action="" class="inputs">
+
+                <fieldset class="place">
+                    <label for="day">DAY</label>
+                    <input type="number" name="day" id="day" value="">
+                </fieldset>
+
+                <fieldset class="place">
+                    <label for="month">MONTH</label>
+                    <input type="number" name="month" id="month" value="">
+                </fieldset>
+
+                <fieldset class="place">
+                    <label for="month">YEAR</label>
+                    <input type="number" name="year" id="year" value="">
+                </fieldset>
+            </form>
+
+            <div class="divisor">
+                <div class="linha"></div>
+                <div class="icone">
+                    <button type="submit" id="btn" onclick="enviar()">
+                        <img src="./assets/images/icon-arrow.svg" alt="seta para baixo">
+                    </button>
+                </div>
+            </div>
+
+            <div class="result">
+                <p><span id="spanyears">38 </span>years</p>
+                <p><span id="spanmonths">3 </span>months</p>
+                <p><span id="spandays">26 </span>days</p>
+            </div>
+        </div>
+        
+    </div>
+    
+    <footer class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+        Coded by <a href="#">Cícero Martins</a>.
+    </footer>
+</body>
+</html>
